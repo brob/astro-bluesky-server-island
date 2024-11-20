@@ -3,7 +3,11 @@ import { CacheHeaders } from "cdn-cache-control";
 
 export const prerender = false;
 
-const currentTime = new Date().toLocaleString();
+const currentTime = await new Promise((resolve) => {
+    setTimeout(() => {
+        resolve(new Date().toLocaleString());
+    }, 100);
+});
 
 // Caching
 const headers = new CacheHeaders().ttl(1800);
