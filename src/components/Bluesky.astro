@@ -3,6 +3,8 @@ import agent from "../utils/bluesky";
 import { CacheHeaders, ONE_HOUR } from "cdn-cache-control";
 import {BlueskyPost} from '@astro-community/astro-embed-bluesky'
 
+export const prerender = false
+
 const { actor } = Astro.props
 
 const {data} = await agent.getAuthorFeed({
