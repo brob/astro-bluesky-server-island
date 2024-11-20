@@ -6,7 +6,7 @@ export const prerender = false;
 const currentTime = new Date().toLocaleString();
 
 // Caching
-const headers = new CacheHeaders().ttl(300);
+const headers = new CacheHeaders().ttl(1800);
 headers.forEach((value, key) => Astro.response.headers.set(key, value))
 ---
 
