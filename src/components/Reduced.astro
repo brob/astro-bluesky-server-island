@@ -1,0 +1,14 @@
+---
+import { CacheHeaders } from "cdn-cache-control";
+
+export const prerender = false;
+
+const currentTime = new Date().toLocaleString();
+
+// Caching
+const headers = new CacheHeaders().ttl(300);
+headers.forEach((value, key) => Astro.response.headers.set(key, value))
+---
+
+
+<h1>{currentTime}</h1>
