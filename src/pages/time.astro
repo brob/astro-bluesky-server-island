@@ -1,5 +1,6 @@
 ---
-import Reduced from "../components/Reduced.astro"
+import Bluesky from "../components/Bluesky.astro";
+import Fallback from "../components/Fallback.astro";
 ---
 
 <html lang="en">
@@ -12,8 +13,10 @@ import Reduced from "../components/Reduced.astro"
 	</head>
 	<body class="bg-gradient-to-br from-purple-600 to-red-500">
 		<div class="max-w-2xl mx-auto flex flex-col items-center justify-center min-h-screen ">
-			<Reduced server:defer />
+			<Bluesky actor="brob.dev" server:defer>
+				<Fallback slot="fallback" />
+			</Bluesky>
 		</div>
-
+		
 	</body>
 </html>
