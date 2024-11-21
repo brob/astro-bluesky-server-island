@@ -14,13 +14,14 @@ import Fallback from "../components/Fallback.astro";
 	<body class="bg-gradient-to-br from-purple-600 to-red-500">
 		<div class="max-w-2xl mx-auto flex flex-col items-center justify-center min-h-screen ">
 			<h1 class="text-4xl mb-10 font-bold text-white">Astro Server Component for Bluesky</h1>
-			
+			<div class="flex items-center gap-3">
 			<Bluesky actor="brob.dev" server:defer>
 				<Fallback slot="fallback" />
 			</Bluesky>
 			<Bluesky actor="astro.build" server:defer>
 				<Fallback slot="fallback" />
 			</Bluesky>
+		</div>
 		</div>
 
 	</body>
