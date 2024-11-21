@@ -14,6 +14,7 @@ const post = data.feed[0].post
 
 // Caching
 const headers = new CacheHeaders().ttl(1800);
+console.log(headers)
 headers.forEach((value, key) => Astro.response.headers.set(key, value))
 ---
 
