@@ -1,4 +1,4 @@
-export const GET: APIRoute = ({ params, request }) => {
+export const GET = ({ params, request }) => {
     return new Response(JSON.stringify({
         message: "This was a GET!"
       })
