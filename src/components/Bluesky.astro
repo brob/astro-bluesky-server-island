@@ -5,7 +5,7 @@ import { BlueskyPost } from '@astro-community/astro-embed-bluesky'
 
 export const prerender = false;
 
-const { actor } = Astro.props
+const { actor, ttl=1800 } = Astro.props
 
 const {data} = await agent.getAuthorFeed({
     actor
@@ -13,7 +13,7 @@ const {data} = await agent.getAuthorFeed({
 const post = data.feed[0].post
 
 // Caching
-const headers = new CacheHeaders().ttl(1800);
+const headers = new CacheHeaders().ttl(ttl);
 headers.forEach((value, key) => Astro.response.headers.set(key, value))
 ---
 

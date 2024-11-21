@@ -18,7 +18,7 @@ import Fallback from "../components/Fallback.astro";
 			<Bluesky actor="brob.dev" server:defer>
 				<Fallback slot="fallback" />
 			</Bluesky>
-			<Bluesky actor="astro.build" server:defer>
+			<Bluesky actor="astro.build" ttl="5" server:defer>
 				<Fallback slot="fallback" />
 			</Bluesky>
 		</div>
