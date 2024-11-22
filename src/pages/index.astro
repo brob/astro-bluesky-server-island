@@ -13,12 +13,12 @@ import Fallback from "../components/Fallback.astro";
 	</head>
 	<body class="bg-gradient-to-br from-purple-600 to-red-500">
 		<div class="max-w-2xl mx-auto flex flex-col items-center justify-center min-h-screen ">
-			<h1 class="text-4xl mb-10 font-bold text-white">Astro Server Component for Bluesky</h1>
+			<h1 class="text-4xl px-3 mb-10 font-bold text-white">Astro Server Component for Bluesky</h1>
 			<div class="grid md:grid-cols-2 items-center gap-3">
 			<Bluesky actor="brob.dev" server:defer>
 				<Fallback slot="fallback" />
 			</Bluesky>
-			<Bluesky actor="astro.build" ttl="5" server:defer>
+			<Bluesky actor="astro.build" cacheTime="5" server:defer>
 				<Fallback slot="fallback" />
 			</Bluesky>
 		</div>
