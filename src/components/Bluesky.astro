@@ -12,7 +12,7 @@ const {data} = await agent.getAuthorFeed({
 })
 const post = data.feed[0].post as Post
 // Caching
-const headers = new CacheHeaders().swr(1800);
+const headers = new CacheHeaders().swr(1800).ttl(1800);
 console.log(headers)
 headers.forEach((value, key) => Astro.response.headers.set(key, value))
 ---
